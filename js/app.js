@@ -7,11 +7,11 @@ var correctCounter = 0;
 
 // Array for questions
 var questions = [
-  'First truth/lie: I used to be a poker dealer, true?',
-  'Second truth/lie: I\'m so fit I ran a marathon, true?',
-  'Third truth/lie: Just like the rest of the PNW, I LOVE snowboarding! True?',
-  'Fourth truth/lie: I have jumped out of a plan before, true?',
-  'Fifth truth/lie: Here\'s an easy one for you, because you\'re not so good at this game, I LOVE the outdoors, true?'
+  'First truth/lie: I used to be a poker dealer, Y/N?',
+  'Second truth/lie: I\'m so fit I ran a marathon. Y/N?',
+  'Third truth/lie: Just like the rest of the PNW, I LOVE snowboarding! Y/N?',
+  'Fourth truth/lie: I have jumped out of a plan before. Y/N?',
+  'Fifth truth/lie: Here\'s an easy one for you, because you\'re not so good at this game, I LOVE the outdoors. Y/N?'
 ]
 
 // Begin game

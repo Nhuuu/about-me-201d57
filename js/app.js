@@ -1,7 +1,7 @@
 'use strict';
 
 var response;
-var correctAnswers = ['yes', 'yes', 'no', 'yes', 'yes'];
+var correctAnswers = ['yes', 'yes', 'no', 'yes', 'yes', 32, ['Texas', 'Louisiana']];
 var userAnswers = []
 var correctCounter = 0;
 
@@ -12,8 +12,6 @@ var questions = [
   'I LOVE snowboarding! Y/N?',
   'I have jumped out of a plan before. Y/N?',
   'Here\'s an easy one for you, I LOVE the outdoors. Y/N?',
-  'How old am I?', // indicate whether the guess is too high or too low, 4 guesses
-  'Can you guess a state that I have lived in besides Washington?' //multiple correct answers to be picked, user gets 6 tries, displays all of the possible correct answers.
 ]
 
 // Begin game
@@ -38,6 +36,13 @@ for (var i = 0; i < questions.length; i++){
   userAnswers.push(response);
 }
 
+// TODO: indicate whether the guess is too high or too low, 4 guesses
+var numericQuestion = prompt('How old am I?') 
+// TODO: multiple correct answers to be picked, user gets 6 tries, displays all of the possible correct answers.
+var multiChoiceQuestion = prompt('Can you guess a state that I have lived in besides Washington?')
+
+
+
 
 // Counts the number of correct answers
 
@@ -48,11 +53,9 @@ for (var i = 0; i < correctAnswers.length; i++){
 }
 
 
-
 var results = document.getElementById('result-message');
 
 // Checks to see if all answers are correct and displays results
-
 if(correctCounter === 5){
   alert('Congratulations! You got 5 out of 5 correct!')
   results.textContent = (`A little creepy how well you know me ${username}...`)

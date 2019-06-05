@@ -1,4 +1,4 @@
-'user strict';
+'use strict';
 
 var response;
 var correctAnswers = ['yes', 'yes', 'no', 'yes', 'yes'];

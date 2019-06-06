@@ -7,10 +7,10 @@ var correctCounter = 0;
 // Array for questions
 var questions = [
   'I used to be a poker dealer. Y/N?',
-  'I\'m so fit I ran a marathon. Y/N?',
+  'I have run a full marathon before. Y/N?',
   'I LOVE snowboarding! Y/N?',
   'I have jumped out of a plan before. Y/N?',
-  'Here\'s an easy one for you, I LOVE the outdoors. Y/N?',
+  'My favorite color is blue. Y/N?',
 ];
 
 // Begin game
@@ -71,16 +71,14 @@ var guesses = 6;
 var stateQuestion;
 while (guesses > 0){
   stateQuestion = prompt('Can you guess a state that I have lived in besides WASHINGTON?').toUpperCase();
-  for(var i = 0; i < correctAnswers[6].length; i++){
-    if(stateQuestion === correctAnswers[6][i]){
-      alert(`Whoa! You're right, I've lived in WASHINGTON, as well as these states: ${correctAnswers[6]}`);
-      correctCounter++;
-      guesses = 0;
-      break;
-    } else {
-      alert(`Wrong! Try again, you have ${guesses} guesses left.`);
-      guesses--;
-    }
+  if(stateQuestion === correctAnswers[6][0] || stateQuestion === correctAnswers[6][1]){
+    alert(`Whoa! You're right, I've lived in WASHINGTON, as well as these states: ${correctAnswers[6]}`);
+    correctCounter++;
+    guesses = 0;
+    break;
+  } else {
+    alert(`Wrong! Try again, you have ${guesses} guesses left.`);
+    guesses--;
   }
 }
 

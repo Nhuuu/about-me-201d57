@@ -10,7 +10,7 @@ var questions = [
   'I have run a full marathon before. Y/N?',
   'I LOVE snowboarding! Y/N?',
   'I have jumped out of a plan before. Y/N?',
-  'My favorite color is blue. Y/N?',
+  'My favorite color is blue. Y/N?'
 ];
 
 // Begin game
@@ -25,10 +25,10 @@ for (var i = 0; i < questions.length; i++){
   if(response === 'y'){
     response = 'yes';
     if(response === correctAnswers[i]){
-      alert('Correct!')
+      alert('Correct!');
       correctCounter++;
     } else {
-      alert('Wrong!')
+      alert('Wrong!');
     }
   }
   if(response === 'n'){
@@ -85,9 +85,9 @@ while (guesses > 0){
 
 // Checks to see how many the user got correct.
 if(correctCounter === 7){
-  alert(`Congratulations, ${username}! You got ${correctCounter} out of 7 correct!`)
+  alert(`Congratulations, ${username}! You got ${correctCounter} out of 7 correct!`);
 } else {
-  alert(`Womp, womp. ${username}, you only got ${correctCounter} out of 7 correct.`)
+  alert(`Womp, womp. ${username}, you only got ${correctCounter} out of 7 correct.`);
 }
 
 

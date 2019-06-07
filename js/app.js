@@ -17,8 +17,8 @@ var questions = [
 var username = prompt('Let\'s see if you know me! But first, what\'s your name?');
 alert(`Yay! Let's play ${username}!`);
 
+// Gets responses from the five questions and display their results
 var fiveInitialQuestions = function() {
-  // Gets responses from the five questions and display their results
   for (var i = 0; i < questions.length; i++){
     response = prompt(questions[i]).toLowerCase();
     console.log('before changing the response:', response);

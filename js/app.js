@@ -22,7 +22,7 @@ var fiveInitialQuestions = function() {
   for (var i = 0; i < questions.length; i++){
     response = prompt(questions[i]).toLowerCase();
     console.log('before changing the response:', response);
-    if(response === 'y'){
+    if(response === 'y' || response ==='yes'){
       response = 'yes';
       if(response === correctAnswers[i]){
         alert('Correct!');
@@ -31,7 +31,7 @@ var fiveInitialQuestions = function() {
         alert('Wrong!');
       }
     }
-    if(response === 'n'){
+    if(response === 'n' || response === 'no'){
       response = 'no';
       if(response === correctAnswers[i]){
         alert('Correct!');
@@ -51,23 +51,24 @@ var tries = 4;
 var ageAnswer;
 
 var ageQuestion = function() {
-  while(tries > 0 && ageAnswer !== 32){
+  while(tries > 0){
     ageAnswer = prompt('How old am I?');
-    if(tries === 0){
-      alert(`Sorry you have ${tries} left, next question!`);
-    } else if(ageAnswer > 32){
-      tries--;
-      alert(`Rude! Too high! Guess again, you have ${tries} more tries!`);
-    } else if(ageAnswer < 32){
-      tries--;
-      alert(`Thanks! But too low! you have ${tries} more tries!`);
-    } else {
+    if(parseInt(ageAnswer) === 32){
       alert('Nice! You guessed correctly!');
       correctCounter++;
       tries = 0;
-    }
-  }
-}
+    } else if(parseInt(ageAnswer) > 32){
+      tries--;
+      alert(`Rude! Too High, you have ${tries} left.`);
+    } else if(parseInt(ageAnswer) < 32){
+      tries--;
+      alert(`Thanks, but that's too low, you have ${tries} left.`);
+    } else {
+      tries--;
+      alert(`Wrong! you have ${tries} left.`);
+    };
+  };
+};
 
 ageQuestion();
 
@@ -84,11 +85,15 @@ var stateQuestion = function() {
       guesses = 0;
       break;
     } else {
-      alert(`Wrong! Try again, you have ${guesses} guesses left.`);
       guesses--;
-    }
-  }
-}
+      if(guesses === 0){
+        alert('Sorry, you got this question wrong, I\'ve lived in ' + correctAnswers[6][0] + ' and ' + correctAnswers[6][1] + '.')
+      } else {
+        alert(`Wrong! Try again, you have ${guesses} guesses left.`);
+      }
+    };
+  };
+};
 
 stateQuestion();
 
@@ -101,5 +106,4 @@ var checkWinConditions = function() {
   }
 }
 
-
-
+checkWinConditions();
